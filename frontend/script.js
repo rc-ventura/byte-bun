@@ -47,13 +47,13 @@ document.querySelector("#btnCalcularPedido").addEventListener("click", async fun
         return;
       }
 
-      const itens = await resposta.json();
+      const dados = await resposta.json();
       const totalFormatado = itens.total.toFixed(2)
 
       cupom.textContent = 
-      `Pão: ${itens.pao}\n` +
-      `Recheio: ${itens.recheio}\n`+
-      `Molho: ${itens.molho}\n`+
+      `Pão: ${dados.itens.pao}\n` +
+      `Recheio: ${dados.itens.recheio}\n`+
+      `Molho: ${dados.molho}\n`+
       `Total: ${totalFormatado}`;
      
 })
