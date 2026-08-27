@@ -1,9 +1,10 @@
 
+const URL_API = `https://${BACKEND_URL}:3000` || "http://localhost:3000"
 
 
 // 01 exercicio fetch 
 async function carregarCardapio() {
-const resposta = await fetch("http://localhost:3000/cardapio");
+const resposta = await fetch(`${URL_API}/cardapio`);
 const itens = await resposta.json();
 console.log(itens);
 
@@ -16,7 +17,6 @@ popularSelect("selectMolho", itens.filter((item => item.categoria === "molho")))
 carregarCardapio()
 
 //exercicio 03
-const URL_API = "http://localhost:3000"
 const cupom = document.querySelector("#cupom");
 
 function popularSelect(idSelect, itens) {
