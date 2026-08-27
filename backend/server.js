@@ -1,9 +1,16 @@
+require("dotenv").config()
+
 const express = require("express");
 const cors = require("cors")
 const app = express();
 
-app.use(cors())
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5500";
+
+
+app.use(cors({origin: FRONTEND_URL}))
 app.use(express.json())
+
+
 
 const cardapio = [
   {categoria: "pao", nome:"Frances", preco: 1.5},
