@@ -29,3 +29,33 @@ function popularSelect(idSelect, itens) {
     }
 }
 
+document.querySelector("#btnCalcularPedido").addEventListener("click", async function () {
+    const pao = document.querySelector("#selectPao").value;
+    const recheio = document.querySelector("#selectRecheio").value;
+    const molho = document.querySelector("#selectMolho").value;
+
+    
+      const resposta = await fetch(`${API_URL}/pedido`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({pao, recheio, molho}),
+      });
+
+      if(!resposta.ok) {
+        const erro = await resposta.json();
+        cupom.textContent = `Erro: ${erro.erro} || "Nao foi possivel calcular seu pedido "}`
+        return;
+      }
+
+      const itens = await resposta.json();
+      const totalFormatado = itens.total.toFixed(2)
+
+      cupom.textContent = 
+      `Pão: ${itens.pao}\n` +
+      `Recheio: ${itens.recheio}\n`+
+      `Molho: ${itens.molho}\n`+
+      `Total: ${totalFormatado}`;
+     
+})
+
+
