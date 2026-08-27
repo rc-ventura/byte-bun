@@ -1,41 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Byte & Bun</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-     <h1>Bem vindo a Byte & Bun</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Byte &¨Bun</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <h2>Desafio Final - Calculadora de Sanduiche Interativa</h2>
+    <label>
+      Pao:
+      <select id="selectPao">
+      </select>
+    </label>
+    <label>
+      Recheio:
+      <select id="selectRecheio">
+      </select>
+    </label>
+    <label>
+      Molho:
+      <select id="selectMolho">      
+      </select>
+    </label>
+    <button id="btnCalcularPedido">Calcular Pedido</button>
+    <p id="cupom"></p>
+  </section>
 
-     <section>
-        <h2>Exercicio 1 - Console</h2>
-        <p class="explicacao"> Sem elemento visual: confira a aba do console F12 ao carregar a pagina</p>
-
-     </section>
-
-     <section>
-        <h2>Exercicio 2 - Mudando o texto da pagina</h2>
-        <button id="btnSaudacao">Entrar</button>
-        <p id="mensagem"></p>
-     </section>
-
-     <section>
-      <h2>Exercicio 3 - Exibindo um preco do cardapio</h2>
-      <button id="btnFrances">Frances</button>
-      <button id="btnIntegral">Integral</button>
-      <button id="btnCiabatta">Ciabatta</button>
-      <p id="resultado"></p>
-
-     </section>
-
-     <section>
-      <h2>Exercicio 4 - Lendo um valor digitado</h2>
-      <input   type="number" id="quantidade" min="0" placeholder="Digite a quantidade"     />
-      <button id="btnCalcular">Calcular</button>
-      <p id="total"></p> 
-    </section>
-     
-    <script src="script.js"> </script>
-  </body>
-  </html>
+  <script src="script.js"></script>
+</body>
+</html>

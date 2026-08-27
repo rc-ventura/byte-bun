@@ -1,61 +1,32 @@
-//------ exercicio 01: console.log ----
-console.log("Bem vindo a Byte Bun");
-
-// ------ exercicio 02: Mudando o texto da pagina ----
-const botaoSaudacao = document.querySelector("#btnSaudacao");
-const mensagem = document.querySelector("#mensagem");
-
-botaoSaudacao.addEventListener("click", function () {
-  
-  alert("Bem vindo a Byte Bun! Pronto para pedir?")
-  mensagem.textContent = "Bem vindo a Bite Bun! Pronto para pedir?"
-})
-
-//------ Exercicio 3: exibindo um preco do cardapio--
-const resultado = document.querySelector("#resultado");
-const btnFrances = document.querySelector("#btnFrances");
-const btnIntegral = document.querySelector("#btnIntegral");
-const btnCiabatta = document.querySelector("#btnCiabatta");
-
-btnFrances.addEventListener("click", function() {
-  resultado.textContent = "Frances R$ 1,50";
-})
-
-btnIntegral.addEventListener("click", function() {
-    resultado.textContent = "Integral R$ 2,00";
-
-})
-
-btnCiabatta.addEventListener("click", function() {
-    resultado.textContent = "Ciabatta R$ 2,50";
-
-})
-
-//----Exercicio 4 - Lendo um valor digitado --
-const inputQuantidade = document.querySelector("#quantidade");
-const btnCalcular = document.querySelector("#btnCalcular")
-const total = document.querySelector("#total");
-
-const PRECO_UNITARIO = 8.0;
-
-btnCalcular.addEventListener("click", function() {
-  const quantidade = Number(inputQuantidade.value);
-
-  if(!quantidade || quantidade <= 0) {
-    total.textContent = "Digite uma quantidade valida";
-    return;
-  }
-  const valorTotal = quantidade * PRECO_UNITARIO;
-  total.textContent = `Total: R$ ${valorTotal.toFixed(2)}`;
-})
 
 
-///----- aula 03 --------
-// exercicio 01 - Primeiro Fetch
+
+// 01 exercicio fetch 
 async function carregarCardapio() {
-  const resposta = await fetch("http://localhost:3000/cardapio")
-  const dados = await resposta.json()
-  console.log(dados)
+const resposta = await fetch("http://localhost:3000/cardapio");
+const itens = await resposta.json();
+console.log(itens);
+
+popularSelect("selectPao", itens.filter((item => item.categoria === "pao")))
+popularSelect("selectRecheio", itens.filter((item => item.categoria === "recheio")))
+popularSelect("selectMolho", itens.filter((item => item.categoria === "molho"))) 
+
 }
 
 carregarCardapio()
+
+//exercicio 03
+const URL_API = "http://localhost:3000"
+const cupom = document.querySelector("#cupom");
+
+function popularSelect(idSelect, itens) {
+  const select = document.querySelector(`#${idSelect}`)
+  for( let i = 0; i < itens.length; i++) {
+    const item = itens[i]
+    const option = document.createElement("option")
+    option.value = item.nome
+    option.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`
+    select.appendChild(option)
+    }
+}
+
