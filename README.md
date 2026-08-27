@@ -1,6 +1,4 @@
-```python
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write("""# 🍔 Byte Bun - Projeto Integrador
+# 🍔 Byte Bun - Projeto Integrador
 
 Bem-vindo ao repositório do **Byte Bun**, um projeto integrador com arquitetura full-stack. Este sistema foi desenhado separando a lógica de backend (Node.js) e a interface de usuário no frontend.
 
