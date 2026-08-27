@@ -1,5 +1,5 @@
 
-const URL_API = `https://${BACKEND_URL}:3000` || "http://localhost:3000"
+const URL_API = "https://byte-bun-ozqr.onrender.com/"
 
 // 01 exercicio fetch 
 async function carregarCardapio() {
