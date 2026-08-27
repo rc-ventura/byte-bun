@@ -1,7 +1,6 @@
 
 const URL_API = `https://${BACKEND_URL}:3000` || "http://localhost:3000"
 
-
 // 01 exercicio fetch 
 async function carregarCardapio() {
 const resposta = await fetch(`${URL_API}/cardapio`);
