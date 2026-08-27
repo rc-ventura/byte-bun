@@ -53,7 +53,7 @@ document.querySelector("#btnCalcularPedido").addEventListener("click", async fun
       cupom.textContent = 
       `Pão: ${dados.itens.pao}\n` +
       `Recheio: ${dados.itens.recheio}\n`+
-      `Molho: ${dados.molho}\n`+
+      `Molho: ${dados.itens.molho}\n`+
       `Total: ${totalFormatado}`;
      
 })
