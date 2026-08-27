@@ -1,5 +1,5 @@
 
-const URL_API = "https://byte-bun-ozqr.onrender.com/"
+const URL_API = "https://byte-bun-ozqr.onrender.com"
 
 // 01 exercicio fetch 
 async function carregarCardapio() {
