@@ -34,7 +34,7 @@ document.querySelector("#btnCalcularPedido").addEventListener("click", async fun
     const recheio = document.querySelector("#selectRecheio").value;
     const molho = document.querySelector("#selectMolho").value;
 
-    
+    try {
       const resposta = await fetch(`${URL_API}/pedido`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -55,7 +55,10 @@ document.querySelector("#btnCalcularPedido").addEventListener("click", async fun
       `Recheio: ${dados.itens.recheio}\n`+
       `Molho: ${dados.itens.molho}\n`+
       `Total: ${totalFormatado}`;
-     
+    }catch(err) {
+      throw new err
+    }  
 })
+
 
 
