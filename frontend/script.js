@@ -1,6 +1,7 @@
 
 const URL_API = "https://byte-bun-ozqr.onrender.com"
 
+// BANNER
 // 01 exercicio fetch 
 async function carregarCardapio() {
 const resposta = await fetch(`${URL_API}/cardapio`);
